@@ -51,12 +51,14 @@ class VersionCommand extends VanillaCommand{
 		}
 
 		if(count($args) === 0){
-			$sender->sendMessage(new TranslationContainer("pocketmine.server.info.extended", [
-				$sender->getServer()->getName(),
-				$sender->getServer()->getPocketMineVersion(),
-				$sender->getServer()->getVersion(),
-				ProtocolInfo::CURRENT_PROTOCOL
-			]));
+			$sender->sendMessage("
+Dieser Server läuft mit CraftingMine-MP
+CraftingMine-MP ist eine Verbesserte Version von PocketMine-MP.
+
+Entwickler: LPTP1 und TunikaKeks15089
+
+Discord: 
+");
 		}else{
 			$pluginName = implode(" ", $args);
 			$exactPlugin = $sender->getServer()->getPluginManager()->getPlugin($pluginName);
